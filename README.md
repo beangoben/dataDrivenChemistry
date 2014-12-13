@@ -1,10 +1,11 @@
 AC 209 Data Science Final project 
 ===================
+### (Gifs loading, give a minute, it's worth it)
+
 <img src="http://i.imgur.com/pgXt52x.gif">
 
 (Ab initio Molecular Dynamics of Molecules doing the Harlem Shake)
 
-# Under Construction! 
 # Contents
 - [The Idea](#the-idea) 
 - [Data](#data) 
@@ -14,16 +15,22 @@ AC 209 Data Science Final project
 
 
 # The Idea
+** Can we "discover" chemistry concepts via patterns in data? ** 
+(Obviously, let me explain more about what I mean)
 
-Quantum chemistry is a branch of theoretical chemistry which applies quantum mechanics  to address problems in chemistry.
+Molecules are small objects whose chemical behaviour is governs by physcial laws (Quantum Mechancis) and the dynamics between protons and electrons.
+<img src="http://fat.gfycat.com/GeneralWarmheartedGopher.gif">
 
-In Quantum Chemistry you can calculate a molecule on a computer, simulating and solving the Schrödinger equation to obtain molecular properties.
-Chemoinformatics
+Turns out we can simulate these laws in a computer, solving the Schrödinger equation to obtain molecular properties that you could otherwise obtain via an experiment.
 
-An open question is: **How can we incorporate quantum effects/information into chemoinformatics?**
+Computational chemistry is finally in a position to conduct studies on hundreds or even thousands of molecules within a reasonable amount of time. That means a lot of data :).
+
 Recently in Ramakrishnan et Al. reported in Nature Scientific Data, ["Quantum chemistry structures and properties of 134 kilo molecules"](http://www.nature.com/articles/sdata201422) a data set 134k calculated molecules. 
 
-<img src="http://fat.gfycat.com/GeneralWarmheartedGopher.gif">
+Part of the philosophy of calculating molecules on a computer is the "First Principles", "Ab-initio", "Without knowing anything" mind set, we want to predict and model reality (molecular reality that is) without previous knowledge, without emphirical observations (at least to certain degree). 
+For example if a computer had molecules of the skin of tomato, would it know the tomato is red? By simulating how light hits the molecules and bounces back we can find out the wavelength of this returned light, and find out it is actually within the spectrum of the color "red". We predict the tomato is red "without knowing anything".
+
+The aim of this project is to play around with this dataset and see what chemistry we can learn.
 
 # Data
 
