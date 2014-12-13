@@ -2,18 +2,18 @@ AC 209 Data Science Final project
 ===================
 
 # Contents
-- [What's this all about?](#intro) 
-- [The Data](#data) 
-- [Exploration, Visualization](#explore) 
-- [Finding Patterns](#patterns) 
-- [Future Directions](#future) 
+- [The Idea](#the-idea) 
+- [Data](#data) 
+- [Exploration Visualization](#exploration-visualization) 
+- [Finding Patterns](#finding-patterns) 
+- [Future Directions](#future-directions) 
 
 
-# What's this all about?
+# The Idea
 
-# The Data
+# Data
 
-# Exploration, Visualization
+# Exploration Visualization
 
 # Finding Patterns
 
