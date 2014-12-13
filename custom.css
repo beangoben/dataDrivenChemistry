@@ -1,0 +1,238 @@
+body {
+    font-family: Century Gothic, sans;
+}
+
+
+/* Hiding the ipython log */
+
+div#ipython_notebook {
+    display: none;
+}
+
+div #notebook { /* centre the content */
+	background: #fff; /* white background for content */
+	width: 1000px;
+	margin: auto;
+	padding-left: 1em;
+}
+
+div.cell { /* set cell width to about 80 chars */
+	width: 900px;
+}
+
+/*div.cell.code_cell {
+	background-color: rgba(12,12,12,0.3); 
+	border-radius: 10px;
+	padding: 0.5em;
+}*/
+
+/* draw border around running cells */
+div.cell.border-box-sizing.code_cell.running {
+	border: 3px solid #111;
+}
+
+.text_cell_render h1 {
+	font-weight: 200;
+	font-size: 32pt;
+	line-height: 100%;
+	color: #f92672;
+	margin-bottom: 0.1em;
+	margin-top: 0.1em;
+	display: block;
+}
+
+.text_cell_render h2 {
+	line-height: 100%;
+	color: #a6e22e;
+	margin-bottom: 0.1em;
+	margin-top: 0.1em;
+	display: block;
+}
+
+.text_cell_render h3 {
+	margin-top:12px;
+	margin-bottom: 3px;
+	font-style: italic;
+	color: #66d9ef;
+}
+
+.text_cell_render h4 {
+	margin-bottom: 1px;
+	margin-top: 1px;
+	font-style: italic;
+	color: #e6db74;
+}
+
+div#header {
+    background-color:		 #222222;
+    color: #f92672;
+    /*color: #FFFFFF;*/
+    height: 3em;
+    border: 0px;
+}
+
+/* Formatting Notebook Name */
+span#notebook_name.ui-state-hover {
+    color: #ffffff;
+    /* background: #f92672; */
+    background: #f92672; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f92672 0%, #f2417c 44%, #f92672 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f92672), color-stop(44%,#f2417c), color-stop(100%,#f92672)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f92672 0%,#f2417c 44%,#f92672 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f92672 0%,#f2417c 44%,#f92672 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f92672 0%,#f2417c 44%,#f92672 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f92672 0%,#f2417c 44%,#f92672 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f92672', endColorstr='#f92672',GradientType=0 ); /* IE6-9 */    
+}
+
+
+/* Formatting code in markdown cells */
+div.rendered_html code {
+    font-style: italic;
+    font-weight: bold;
+    color: #8C6900;
+    /* background: #8A8D7A; color: #1D1D10; */
+}
+
+
+div.navbar-inner.navbar-nobg {
+    border: 0px;
+}
+
+
+
+/* Fading in the menubar */
+
+div#menubar-container {
+    height: 8px;
+    width: 100%;
+    opacity: 1;
+    /*
+    -webkit-transition: all 1s ease;
+    -moz-transition   : all 1s ease;
+    -o-transition     : all 1s ease;
+    -ms-transition    : all 1s ease;
+    transition        : all 1s ease;*/
+    overflow: hidden;
+    -webkit-transition: height 0.25s ease-out;
+    -moz-transition   : height 0.25s ease-out;
+    -o-transition     : height 0.25s ease-out;
+    -ms-transition    : height 0.25s ease-out;
+    transition        : height 0.25s ease-out;
+}
+div#menubar-container:hover {
+    height: 80px;
+    overflow:visible;
+    opacity: 1;
+}
+ul.dropdown-menu {    
+    overflow: visible;
+    position: absolute;
+}
+
+div#notebook_panel {
+    /*position:absolute;
+    width: 100%;*/
+    height: 100%;
+}
+
+/* Monokai */
+div.CodeMirror-lines {
+/*     background-color: #222222;
+    color: white; */
+    border: 0px;
+    /* padding-top: 1em; */
+    padding-bottom: 1em;
+}
+
+/* Based on Sublime Text's Monokai theme */
+.cm-s-ipython {background: #272822; color: #f8f8f2;}
+.cm-s-ipython div.CodeMirror-selected {background: #49483E !important;}
+.cm-s-ipython .CodeMirror-gutter {background: #272822; border-right: 0px;}
+.cm-s-ipython .CodeMirror-gutter-text {color: #d0d0d0;}
+.cm-s-ipython .CodeMirror-cursor {border-left: 1px solid #f8f8f0 !important;}
+.cm-s-ipython span.cm-comment {color: #dddddd;}
+.cm-s-ipython span.cm-atom {color: #ae81ff;}
+.cm-s-ipython span.cm-number {color: #ae81ff;}
+.cm-s-ipython span.cm-property, .cm-s-ipython span.cm-attribute {color: #a6e22e;}
+.cm-s-ipython span.cm-keyword {color: #f92672;}
+.cm-s-ipython span.cm-string {color: #e6db74;}
+.cm-s-ipython span.cm-variable {color: #a6e22e;}
+.cm-s-ipython span.cm-variable-2 {color: #9effff;}
+.cm-s-ipython span.cm-def {color: #fd971f;}
+.cm-s-ipython span.cm-error {background: #f92672; color: #f8f8f0;}
+.cm-s-ipython span.cm-bracket {color: #f8f8f2;}
+.cm-s-ipython span.cm-tag {color: #f92672;}
+.cm-s-ipython span.cm-link {color: #ae81ff;}
+.cm-s-ipython .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
+
+/* No border for selected cells */
+div.cell.selected {
+    border: 0px;
+}
+
+/*Input and output cells formatting*/
+div.prompt.input_prompt, div.prompt.output_prompt {
+    font-family: Consolas;
+    color: #ae81ff;
+    border: 0px;
+    width: 6.5em;
+}
+
+div.prompt.input_prompt {
+    background-color: #CCCCCC;
+}
+
+div.prompt.output_prompt {
+    background-color: #FFFFFF;
+    padding-top: 0.5em;
+    margin: 8px; /*This is for getting the box-shadow property of the parent to display properly;*/
+}
+
+div.prompt {
+    width: 6.5em;
+}
+
+
+
+div.input_area {
+    border: 0px;
+    margin-bottom: 0;
+}
+
+div.out_prompt_overlay.prompt {
+    width: 1em;
+    border: 0px;
+}
+
+div.out_prompt_overlay.prompt:hover {
+    border: 0px;
+    background-color: #f92672;
+    box-shadow: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    opacity:0.2;
+}
+
+div.output_subarea.output_text.output_stream.output_stdout,div.output_subarea.output_text {
+    margin-left: 0em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    margin-top: 8px; /*This is for getting the box-shadow property of the parent to display properly;*/
+}
+
+div.output_wrapper {
+    background-color: #FFFFFF;
+    margin-bottom: 2em;
+    margin-top: 0;
+}
+
+div.output.vbox {
+    box-shadow:inset 0 0 8px #4d4d4d;   /* Check the output prompt settings when changing this*/
+}
+
+
