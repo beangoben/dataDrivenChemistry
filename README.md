@@ -24,6 +24,8 @@ Chemoinformatics
 An open question is: **How can we incorporate quantum effects/information into chemoinformatics?**
 Recently in Ramakrishnan et Al. reported in Nature Scientific Data, ["Quantum chemistry structures and properties of 134 kilo molecules"](http://www.nature.com/articles/sdata201422) a data set 134k calculated molecules. 
 
+<img src="http://fat.gfycat.com/GeneralWarmheartedGopher.gif">
+
 # Data
 
 Dataset is hosted on http://dx.doi.org/10.6084/m9.figshare.978904, it is a few hundred MB's.
