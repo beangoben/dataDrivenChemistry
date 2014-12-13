@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 36px;
   font-weight: 700;
-  color:#f92672;
+  color:#a6e22e;
 }
 
 h2 {
@@ -303,7 +303,7 @@ Full-Width Styles
 
 #project_title {
   margin: 0;
-  color: #fff;
+  color: #f92672;
   font-size: 42px;
   font-weight: 700;
   text-shadow: #111 0px 0px 10px;
