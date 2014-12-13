@@ -148,7 +148,7 @@ The main idea would be design and find descriptor that can not be found in a cla
 Anyways, had a lot of fun, here is another gif for reading all these notes:
 <img src="http://giant.gfycat.com/FairWaryBactrian.gif">
 
-# Requierements
+# Requirement
 * Sci-kit learn
 * Pandas
 * Matplotlib
