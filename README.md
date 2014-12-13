@@ -115,21 +115,26 @@ We can clearly see different distributions in both features, this can be contras
 
 The electronic bandgap makes sense, this property indicated how well a material will serve as a conductor, semi-conductor or insulator. The lower the bandgap, the more conductive a material will be.
 There are multiple attempts to create organic semiconductors and the building blocks for these are aromatic rings composed by chains of these simple rings. In contrast with the random sample which has a much higher gap.
+**This can be considered a small success!**
+
+I also tried out other classifying techniques such as Naive-Bayes, K-Nearest Neighbors and Support Vector Machine. The results are summarized in the following table, in each case KFold=10, cross validation was used:
+
+| Method        | Mean Score    |  Std Score |
+| ------------- |:-------------:| -----:|
+| Naive-Bayes     | 0.865 | 0.066 |
+|  K-NN    | 0.585      |   0.087 |
+| SVM | 0.745    |  0.121   |
+| **RandomForest** | 0.928    |  0.043   |
+
 
 # Future Directions
-
-This goal, which is the most interesting was not met due to time constraints.
-The main idea was:
-* Search the most common functional groups, chemical substructures that contain key chemical functionality. For this purpose I wanted to use RDKit, but had problems running it. Tried to think how to formulate this with a Kmeans classifier.
-* Create a labeling for each molecule based on a molecule having the substructure or not. This would create a membership of a molecule to within different clusters.
-* Reduce dimentionality, maybe with a TruncatedSVD or finding the best features by ranking their importance via a random forest classifier.
-* See if membership into a cluster would correspond to general differences in the molecular properties.
-* Use SVM/Random Forest to create a classifier of molecular substructure based on molecular properties.
-
-
+I only tried matching one substructure, there are many functional groups, substructures that influenced strongly the chemical behavior of a molecule.
+I had a priori knowledge of this substructure, with more time it would be interesting to see if you can discover these substructures by themselves.
+There are many techniques I did not try out. Also regression was not explored.
+In a more tough problem you could think of trying to predict accurately all chemical properties from just the geometric coordinates and atoms list. 
 
 There is certaintly much more work to be done and many venues to explore with data science and Quantum Chemistry.
-For the msot part I stuck to the available dataset, yet I feel there could be more interesting data embedded in the calculations which is not included in the data set.
+For the most part I stuck to the available dataset, yet I feel there could be more interesting data embedded in the calculations which is not included in the data set.
 Examples:
 * **Frequencies**, only frequencies were reported but amplitudes were not. Using amplitudes and frequencies together you could devise spectra features such as spectral centroids, brightness o cSpectrum.
 * **Coulombic Matrix**, The matrix of electromagnetic interaction between different
@@ -138,4 +143,5 @@ molecules.
 
 The main idea would be design and find descriptor that can not be found in a classical way, to demonstrate that a quantum calculation has more conection to reality than a classical one. (at the molecular level).
 
+Anyways, had a lot of fun, here is another gif for reading all these notes:
 <img src="http://giant.gfycat.com/FairWaryBactrian.gif">
