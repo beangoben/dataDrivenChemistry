@@ -1,6 +1,8 @@
 AC 209 Data Science Final project 
 ===================
 
+<img src="http://giant.gfycat.com/SlimyReasonableItalianbrownbear.gif">
+
 # Contents
 - [The Idea](#the-idea) 
 - [Data](#data) 
