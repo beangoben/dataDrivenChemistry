@@ -80,7 +80,12 @@ While other properties were much more interesting suggesting possible clusters o
 ![Imgur](http://i.imgur.com/NVRfL8R.png)
 
 
-# Finding Patterns
+# Finding Patterns (Machine Learning!)
+Having explored the dataset we can trim and have a better idea of what types of techniques might work.
+I decided to tryout to train a molecular classifiy. The criteria was common substructures.
+
+
+
 I did explore matching molecules based on similarity. 
 For example taking 1000 random molecules and checking out how similar they were (geometry/structure wise)
 
