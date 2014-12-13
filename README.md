@@ -80,7 +80,9 @@ While other properties were much more interesting suggesting possible clusters o
 ![Imgur](http://i.imgur.com/NVRfL8R.png)
 
 
-# Finding Patterns (Machine Learning!)
+# Finding Patterns 
+Machine Learning enters the foray!
+
 Having explored the dataset we can trim and have a better idea of what types of techniques might work.
 I decided to tryout to train a molecular classifiy. The criteria was common substructures.
 In this specific case I focused on benzene rings, which are carbon atoms arranged in form of a hexagon.
