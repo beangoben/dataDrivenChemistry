@@ -1,8 +1,7 @@
 AC 209 Data Science Final project 
 ===================
-<div style="text-align:center">
 <img src="http://giant.gfycat.com/AridDarlingGuineapig.gif">
-</div>
+
 (Ab initio Molecular Dynamics of Molecules doing the Harlem Shake)
 
 # Under Construction! 
@@ -67,3 +66,5 @@ molecules.
 * **Orbital Occupation Numbers**, Occupation numbers for the electrons within the molecular orbitals.
 
 The main idea would be design and find descriptor that can not be found in a classical way, to demonstrate that a quantum calculation has more conection to reality than a classical one. (at the molecular level).
+
+<img src="http://giant.gfycat.com/FairWaryBactrian.gif">
