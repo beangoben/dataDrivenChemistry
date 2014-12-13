@@ -47,11 +47,38 @@ The entire data set once filtered is a 130830 molecules by 25 features.
 ![Data Wrangling](http://i.imgur.com/zFEFEX2.png)
 
 # Exploration Visualization
+I carried out first an inital exploration of all variables, to see which ones were more correlated, which ones were redundant and also to classify molecules based on their rotation.
+
 The variables to explore were:
 * Size: Number of atoms, Molecular Weight, Spatial Extensivity.
 * Rotation: Rotational Constants and Clases.
 * Energetics: Internal energy, Enthalpy, Gibbs free energy, Zero Point Energy, Atomization Energies.
 * Special Properties: Electronic Band Gap, Molar Heat Capacity, Dipole Moment and Polarizability
+
+## Some examples:
+
+**Here we have a random selection of ten molecules**:
+![Random Selection of molecules](http://i.imgur.com/6fgfTsT.png)
+
+**Distribution of the number of atoms on each Molecule**:
+![Imgur](http://i.imgur.com/6Bqgbu8.png)
+
+**Distribution of the molecular weight, two groups are apparent**:
+![Imgur](http://i.imgur.com/r88fSr2.png)
+
+**Violinplots of Rot Constants (A,B,C) for different types of rotors **
+= (Asymmetrical, Linear, Oblate, Prolate and Spherical) respectively:
+![Imgur](http://i.imgur.com/pyqfg4b.png)
+
+Due to the sheer number of samples, **many variables followed a normal distribution** (like Heat Capacity), these types of variables can sometimes be removed for modelling since there is little variability.
+![Imgur](http://i.imgur.com/ggdfHD9.png)
+
+While other properties were much more interesting suggesting possible clusters of molecules here we have the **Distribution of Electronic Band gaps **.
+![Imgur](http://i.imgur.com/fjCFqv0.png)
+
+**Distribution of Enthalpies of Atomization ** also displays with some peaks.
+![Imgur](http://i.imgur.com/NVRfL8R.png)
+
 
 # Finding Patterns
 I did explore matching molecules based on similarity. 
