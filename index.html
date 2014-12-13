@@ -132,7 +132,9 @@ I also computed a few other descriptors not included in the article, such as ent
 <img src="http://i.imgur.com/NVRfL8R.png" alt="Imgur"></p>
 
 <h1>
-<a id="finding-patterns-machine-learning" class="anchor" href="#finding-patterns-machine-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Finding Patterns (Machine Learning!)</h1>
+<a id="finding-patterns" class="anchor" href="#finding-patterns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Finding Patterns</h1>
+
+<p>Machine Learning enters the foray!</p>
 
 <p>Having explored the dataset we can trim and have a better idea of what types of techniques might work.
 I decided to tryout to train a molecular classifiy. The criteria was common substructures.
@@ -167,24 +169,53 @@ These resulted motivated me to look at the top two features and make sense of th
 <img src="http://i.imgur.com/Vb8amRk.png" alt="Imgur"></p>
 
 <p>The electronic bandgap makes sense, this property indicated how well a material will serve as a conductor, semi-conductor or insulator. The lower the bandgap, the more conductive a material will be.
-There are multiple attempts to create organic semiconductors and the building blocks for these are aromatic rings composed by chains of these simple rings. In contrast with the random sample which has a much higher gap.</p>
+There are multiple attempts to create organic semiconductors and the building blocks for these are aromatic rings composed by chains of these simple rings. In contrast with the random sample which has a much higher gap.
+<strong>This can be considered a small success!</strong></p>
+
+<p>I also tried out other classifying techniques such as Naive-Bayes, K-Nearest Neighbors and Support Vector Machine. The results are summarized in the following table, in each case KFold=10, cross validation was used:</p>
+
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th align="center">Mean Score</th>
+<th align="right">Std Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naive-Bayes</td>
+<td align="center">0.865</td>
+<td align="right">0.066</td>
+</tr>
+<tr>
+<td>K-NN</td>
+<td align="center">0.585</td>
+<td align="right">0.087</td>
+</tr>
+<tr>
+<td>SVM</td>
+<td align="center">0.745</td>
+<td align="right">0.121</td>
+</tr>
+<tr>
+<td><strong>RandomForest</strong></td>
+<td align="center">0.928</td>
+<td align="right">0.043</td>
+</tr>
+</tbody>
+</table>
 
 <h1>
 <a id="future-directions" class="anchor" href="#future-directions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Future Directions</h1>
 
-<p>This goal, which is the most interesting was not met due to time constraints.
-The main idea was:</p>
-
-<ul>
-<li>Search the most common functional groups, chemical substructures that contain key chemical functionality. For this purpose I wanted to use RDKit, but had problems running it. Tried to think how to formulate this with a Kmeans classifier.</li>
-<li>Create a labeling for each molecule based on a molecule having the substructure or not. This would create a membership of a molecule to within different clusters.</li>
-<li>Reduce dimentionality, maybe with a TruncatedSVD or finding the best features by ranking their importance via a random forest classifier.</li>
-<li>See if membership into a cluster would correspond to general differences in the molecular properties.</li>
-<li>Use SVM/Random Forest to create a classifier of molecular substructure based on molecular properties.</li>
-</ul>
+<p>I only tried matching one substructure, there are many functional groups, substructures that influenced strongly the chemical behavior of a molecule.
+I had a priori knowledge of this substructure, with more time it would be interesting to see if you can discover these substructures by themselves.
+There are many techniques I did not try out. Also regression was not explored.
+In a more tough problem you could think of trying to predict accurately all chemical properties from just the geometric coordinates and atoms list. </p>
 
 <p>There is certaintly much more work to be done and many venues to explore with data science and Quantum Chemistry.
-For the msot part I stuck to the available dataset, yet I feel there could be more interesting data embedded in the calculations which is not included in the data set.
+For the most part I stuck to the available dataset, yet I feel there could be more interesting data embedded in the calculations which is not included in the data set.
 Examples:</p>
 
 <ul>
@@ -199,7 +230,8 @@ molecules.</li>
 
 <p>The main idea would be design and find descriptor that can not be found in a classical way, to demonstrate that a quantum calculation has more conection to reality than a classical one. (at the molecular level).</p>
 
-<p><img src="http://giant.gfycat.com/FairWaryBactrian.gif"></p>
+<p>Anyways, had a lot of fun, here is another gif for reading all these notes:
+<img src="http://giant.gfycat.com/FairWaryBactrian.gif"></p>
       </section>
     </div>
 
