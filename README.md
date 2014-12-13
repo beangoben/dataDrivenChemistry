@@ -43,6 +43,8 @@ I created a pandas dataframe, with a row for each molecule, containing all the i
 A pandas dataframe pickle can be downloaded [here](https://www.dropbox.com/sh/6iysi4w0xmmevlt/AABrTLUFZJvrJPDeDCzuhxJYa?dl=0).
 I also computed a few other descriptors not included in the article, such as enthalpies of Atomization and molecular weight.
 
+The entire data set once filtered is a 130830 molecules by 25 features.
+![Data Wrangling](http://i.imgur.com/zFEFEX2.png)
 
 # Exploration Visualization
 The variables to explore were:
