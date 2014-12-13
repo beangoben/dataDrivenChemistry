@@ -4,7 +4,7 @@ AC 209 Data Science Final project
 
 <img src="http://i.imgur.com/pgXt52x.gif">
 
-(Ab initio Molecular Dynamics of Molecules doing the Harlem Shake)
+(*Ab initio Molecular Dynamics of Molecules doing the Harlem Shake*)
 
 # Contents
 - [The Idea](#the-idea) 
@@ -15,8 +15,8 @@ AC 209 Data Science Final project
 
 
 # The Idea
-** Can we "discover" chemistry concepts via patterns in data? ** 
-(Obviously, let me explain more about what I mean)
+**Can we "discover" chemistry concepts via patterns in data?** 
+*(Obviously, let me explain more about what I mean)*
 
 Molecules are small objects whose chemical behaviour is governs by physcial laws (Quantum Mechancis) and the dynamics between protons and electrons.
 <img src="http://fat.gfycat.com/GeneralWarmheartedGopher.gif">
@@ -34,13 +34,15 @@ The aim of this project is to play around with this dataset and see what chemist
 
 # Data
 
-Dataset is hosted on http://dx.doi.org/10.6084/m9.figshare.978904, it is a few hundred MB's.
-I also have pandas dataframe pickle in my dropbox:
-https://www.dropbox.com/sh/6iysi4w0xmmevlt/AABrTLUFZJvrJPDeDCzuhxJYa?dl=0
+Dataset is hosted on [figshare](http://dx.doi.org/10.6084/m9.figshare.978904), it is a few hundred MB's.
+Each calculation is in a specially formated text file (xyz file) which cotains the optimized geometry, the energetics and thermodynamic properties for a single molecule. There are in total 134k stable small organic molecules made up of CHONF atoms.
+The first step was to parse each file in a very specific way, as indicated in the README.txt included in the data set.
 
-Results of each calculation has been embeded within a xyz file in a very specific way. The data provided by the article is not very user friendly ( see: http://www.ch.imperial.ac.uk/rzepa/blog/?p=12803), a better format would have been a json or excel database.
+I created a pandas dataframe, with a row for each molecule, containing all the information within the txt file. This data structure can easily be converted to other more information-friendly formats (excel, databases, json). 
+A pandas dataframe pickle can be downloaded [here](https://www.dropbox.com/sh/6iysi4w0xmmevlt/AABrTLUFZJvrJPDeDCzuhxJYa?dl=0).
+I also computed a few other descriptors not included in the article, such as enthalpies of Atomization and molecular weight.
 
-They reported computed geometric, energetic, electronic, and thermodynamic properties for 134k stable small organic molecules made up of CHONF atoms.
+
 # Exploration Visualization
 The variables to explore were:
 * Size: Number of atoms, Molecular Weight, Spatial Extensivity.
