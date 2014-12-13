@@ -83,13 +83,40 @@ While other properties were much more interesting suggesting possible clusters o
 # Finding Patterns (Machine Learning!)
 Having explored the dataset we can trim and have a better idea of what types of techniques might work.
 I decided to tryout to train a molecular classifiy. The criteria was common substructures.
+In this specific case I focused on benzene rings, which are carbon atoms arranged in form of a hexagon.
+The idea was to see what type of molecular properties are going to be influed by the presence of these substructures.
 
+Here we have one molecule that does have a benzene ring and another that dosen't. 
+![Imgur](http://i.imgur.com/7bXLKKb.png)
+Ideally **we would want an algorithm that would take as input molecular properties and without reference of geometry could predict if it has this structure o not.** I set to do this.
 
+Using RDKit, I did a substructure matching of this ring in all molecules, this would be for validation purposes.
+And so after this I then took a sample of ~250 molecules for each class (equal representation), with Ring and without. Below are a subset of these molecules.
+![Imgur](http://i.imgur.com/Tmnpoex.png)
 
-I did explore matching molecules based on similarity. 
-For example taking 1000 random molecules and checking out how similar they were (geometry/structure wise)
+To start the Machine Learning I reduced the number of variables from 25 to 12 using only: rot constants A, B and C, the dipole moment, polarizability, electronic bandgap, electronic spatial extent, zero point energy, 0 temperature enthalpy, Heat Capacity, molecular Weight and enthalpy of Atomization.
 
+Initially I tried with a RandomForest classifier, first I had to find out the optimal number of trees to use. Using a grid search and KFold=10 cross validation I found out that the best number of Trees was 11, giving a really good mean score of **0.928 (49)**. These results can be seen below:
 
+![Imgur](http://i.imgur.com/7vPZXMi.png)
+
+Then with a good estimator, I extracted the most important features used in the classification. With the idea of finding what makes "Ringed" molecules different from a random subset.
+
+![Imgur](http://i.imgur.com/kZ9PPuO.png)
+
+The top 5 features were in order of increasing importance were: Heat Capacity, Molecular Weight, Zero Point Energy,
+           **Rotational Constant C** and **Electronic Band Gap**!
+These resulted motivated me to look at the top two features and make sense of their distribution using violinplots (Yellow="Ringed", Green="Non-Ringed".
+![Imgur](http://i.imgur.com/r4QKt1F.png)
+![Imgur](http://i.imgur.com/NGeVegR.png)
+
+We can clearly see different distributions in both features, this can be contrasted with **Molecular Weight**, which is much less important is while a bit shifted, has the same distribution.
+![Imgur](http://i.imgur.com/Vb8amRk.png)
+
+The electronic bandgap makes sense, this property indicated how well a material will serve as a conductor, semi-conductor or insulator. The lower the bandgap, the more conductive a material will be.
+There are multiple attempts to create organic semiconductors and the building blocks for these are aromatic rings composed by chains of these simple rings. In contrast with the random sample which has a much higher gap.
+
+# Future Directions
 
 This goal, which is the most interesting was not met due to time constraints.
 The main idea was:
@@ -100,7 +127,7 @@ The main idea was:
 * Use SVM/Random Forest to create a classifier of molecular substructure based on molecular properties.
 
 
-# Future Directions
+
 There is certaintly much more work to be done and many venues to explore with data science and Quantum Chemistry.
 For the msot part I stuck to the available dataset, yet I feel there could be more interesting data embedded in the calculations which is not included in the data set.
 Examples:
