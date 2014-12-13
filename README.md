@@ -1,8 +1,8 @@
 AC 209 Data Science Final project 
 ===================
-<p style="text-align:center;">
+<div style="text-align:center">
 <img src="http://giant.gfycat.com/SlimyReasonableItalianbrownbear.gif">
-</p>
+</div>
 (Ab initio Molecular Dynamics of Molecules doing the Harlem Shake)
 
 
