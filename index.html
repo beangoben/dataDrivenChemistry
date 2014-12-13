@@ -34,12 +34,12 @@
         <h1>
 <a id="ac-209-data-science-final-project-" class="anchor" href="#ac-209-data-science-final-project-" aria-hidden="true"><span class="octicon octicon-link"></span></a>AC 209 Data Science Final project </h1>
 
+<h3>
+<a id="gifs-loading-give-a-minute-its-worth-it" class="anchor" href="#gifs-loading-give-a-minute-its-worth-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>(Gifs loading, give a minute, it's worth it)</h3>
+
 <p><img src="http://i.imgur.com/pgXt52x.gif"></p>
 
-<p>(Ab initio Molecular Dynamics of Molecules doing the Harlem Shake)</p>
-
-<h1>
-<a id="under-construction" class="anchor" href="#under-construction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Under Construction!</h1>
+<p>(<em>Ab initio Molecular Dynamics of Molecules doing the Harlem Shake</em>)</p>
 
 <h1>
 <a id="contents" class="anchor" href="#contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contents</h1>
@@ -60,29 +60,42 @@
 <h1>
 <a id="the-idea" class="anchor" href="#the-idea" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Idea</h1>
 
-<p>Quantum chemistry is a branch of theoretical chemistry which applies quantum mechanics  to address problems in chemistry.</p>
+<p><strong>Can we "discover" chemistry concepts via patterns in data?</strong> 
+<em>(Obviously, let me explain more about what I mean)</em></p>
 
-<p>In Quantum Chemistry you can calculate a molecule on a computer, simulating and solving the Schrödinger equation to obtain molecular properties.
-Chemoinformatics</p>
+<p>Molecules are small objects whose chemical behaviour is governs by physcial laws (Quantum Mechancis) and the dynamics between protons and electrons.
+<img src="http://fat.gfycat.com/GeneralWarmheartedGopher.gif"></p>
 
-<p>An open question is: <strong>How can we incorporate quantum effects/information into chemoinformatics?</strong>
-Recently in Ramakrishnan et Al. reported in Nature Scientific Data, <a href="http://www.nature.com/articles/sdata201422">"Quantum chemistry structures and properties of 134 kilo molecules"</a> a data set 134k calculated molecules. </p>
+<p>Turns out we can simulate these laws in a computer, solving the Schrödinger equation to obtain molecular properties that you could otherwise obtain via an experiment.</p>
 
-<p><img src="http://fat.gfycat.com/GeneralWarmheartedGopher.gif"></p>
+<p>Computational chemistry is finally in a position to conduct studies on hundreds or even thousands of molecules within a reasonable amount of time. That means a lot of data :).</p>
+
+<p>Recently in Ramakrishnan et Al. reported in Nature Scientific Data, <a href="http://www.nature.com/articles/sdata201422">"Quantum chemistry structures and properties of 134 kilo molecules"</a> a data set 134k calculated molecules. </p>
+
+<p>Part of the philosophy of calculating molecules on a computer is the "First Principles", "Ab-initio", "Without knowing anything" mind set, we want to predict and model reality (molecular reality that is) without previous knowledge, without emphirical observations (at least to certain degree). </p>
+
+<p><em>For example if a computer had molecules of the skin of tomato, would it know the tomato is red?</em> By simulating how light hits the molecules and bounces back we can find out the wavelength of this returned light, and find out it is actually within the spectrum of the color "red". <strong>We can predict the tomato is red "without knowing anything"</strong>.</p>
+
+<p>The aim of this project is to play around with this dataset and see what chemistry we can learn.</p>
 
 <h1>
 <a id="data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data</h1>
 
-<p>Dataset is hosted on <a href="http://dx.doi.org/10.6084/m9.figshare.978904">http://dx.doi.org/10.6084/m9.figshare.978904</a>, it is a few hundred MB's.
-I also have pandas dataframe pickle in my dropbox:
-<a href="https://www.dropbox.com/sh/6iysi4w0xmmevlt/AABrTLUFZJvrJPDeDCzuhxJYa?dl=0">https://www.dropbox.com/sh/6iysi4w0xmmevlt/AABrTLUFZJvrJPDeDCzuhxJYa?dl=0</a></p>
+<p>Dataset is hosted on <a href="http://dx.doi.org/10.6084/m9.figshare.978904">figshare</a>, it is a few hundred MB's.
+Each calculation is in a specially formated text file (xyz file) which cotains the optimized geometry, the energetics and thermodynamic properties for a single molecule. There are in total 134k stable small organic molecules made up of CHONF atoms.
+The first step was to parse each file in a very specific way, as indicated in the README.txt included in the data set.</p>
 
-<p>Results of each calculation has been embeded within a xyz file in a very specific way. The data provided by the article is not very user friendly ( see: <a href="http://www.ch.imperial.ac.uk/rzepa/blog/?p=12803">http://www.ch.imperial.ac.uk/rzepa/blog/?p=12803</a>), a better format would have been a json or excel database.</p>
+<p>I created a pandas dataframe, with a row for each molecule, containing all the information within the txt file. This data structure can easily be converted to other more information-friendly formats (excel, databases, json). 
+A pandas dataframe pickle can be downloaded <a href="https://www.dropbox.com/sh/6iysi4w0xmmevlt/AABrTLUFZJvrJPDeDCzuhxJYa?dl=0">here</a>.
+I also computed a few other descriptors not included in the article, such as enthalpies of Atomization and molecular weight.</p>
 
-<p>They reported computed geometric, energetic, electronic, and thermodynamic properties for 134k stable small organic molecules made up of CHONF atoms.</p>
+<p>The entire data set once filtered is a 130830 molecules by 25 features.
+<img src="http://i.imgur.com/zFEFEX2.png" alt="Data Wrangling"></p>
 
 <h1>
 <a id="exploration-visualization" class="anchor" href="#exploration-visualization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exploration Visualization</h1>
+
+<p>I carried out first an inital exploration of all variables, to see which ones were more correlated, which ones were redundant and also to classify molecules based on their rotation.</p>
 
 <p>The variables to explore were:</p>
 
@@ -93,8 +106,36 @@ I also have pandas dataframe pickle in my dropbox:
 <li>Special Properties: Electronic Band Gap, Molar Heat Capacity, Dipole Moment and Polarizability</li>
 </ul>
 
+<h2>
+<a id="some-examples" class="anchor" href="#some-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some examples:</h2>
+
+<p><strong>Here we have a random selection of ten molecules</strong>:
+<img src="http://i.imgur.com/6fgfTsT.png" alt="Random Selection of molecules"></p>
+
+<p><strong>Distribution of the number of atoms on each Molecule</strong>:
+<img src="http://i.imgur.com/6Bqgbu8.png" alt="Imgur"></p>
+
+<p><strong>Distribution of the molecular weight, two groups are apparent</strong>:
+<img src="http://i.imgur.com/r88fSr2.png" alt="Imgur"></p>
+
+<p>*<em>Violinplots of Rot Constants (A,B,C) for different types of rotors *</em>
+= (Asymmetrical, Linear, Oblate, Prolate and Spherical) respectively:
+<img src="http://i.imgur.com/pyqfg4b.png" alt="Imgur"></p>
+
+<p>Due to the sheer number of samples, <strong>many variables followed a normal distribution</strong> (like Heat Capacity), these types of variables can sometimes be removed for modelling since there is little variability.
+<img src="http://i.imgur.com/ggdfHD9.png" alt="Imgur"></p>
+
+<p>While other properties were much more interesting suggesting possible clusters of molecules here we have the *<em>Distribution of Electronic Band gaps *</em>.
+<img src="http://i.imgur.com/fjCFqv0.png" alt="Imgur"></p>
+
+<p>*<em>Distribution of Enthalpies of Atomization *</em> also displays with some peaks.
+<img src="http://i.imgur.com/NVRfL8R.png" alt="Imgur"></p>
+
 <h1>
-<a id="finding-patterns" class="anchor" href="#finding-patterns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Finding Patterns</h1>
+<a id="finding-patterns-machine-learning" class="anchor" href="#finding-patterns-machine-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Finding Patterns (Machine Learning!)</h1>
+
+<p>Having explored the dataset we can trim and have a better idea of what types of techniques might work.
+I decided to tryout to train a molecular classifiy. The criteria was common substructures.</p>
 
 <p>I did explore matching molecules based on similarity. 
 For example taking 1000 random molecules and checking out how similar they were (geometry/structure wise)</p>
