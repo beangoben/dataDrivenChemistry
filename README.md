@@ -28,7 +28,8 @@ Computational chemistry is finally in a position to conduct studies on hundreds 
 Recently in Ramakrishnan et Al. reported in Nature Scientific Data, ["Quantum chemistry structures and properties of 134 kilo molecules"](http://www.nature.com/articles/sdata201422) a data set 134k calculated molecules. 
 
 Part of the philosophy of calculating molecules on a computer is the "First Principles", "Ab-initio", "Without knowing anything" mind set, we want to predict and model reality (molecular reality that is) without previous knowledge, without emphirical observations (at least to certain degree). 
-For example if a computer had molecules of the skin of tomato, would it know the tomato is red? By simulating how light hits the molecules and bounces back we can find out the wavelength of this returned light, and find out it is actually within the spectrum of the color "red". We predict the tomato is red "without knowing anything".
+
+*For example if a computer had molecules of the skin of tomato, would it know the tomato is red?* By simulating how light hits the molecules and bounces back we can find out the wavelength of this returned light, and find out it is actually within the spectrum of the color "red". **We can predict the tomato is red "without knowing anything"**.
 
 The aim of this project is to play around with this dataset and see what chemistry we can learn.
 
